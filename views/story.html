@@ -9,5 +9,5 @@
       'other': '{} points'
     }">
   </ng-pluralize>
-  by {{ vm.author }} {{ vm.time }} | <a href="" class="hide">Hide</a> | {{ vm.numComments }}
+  by {{ vm.author }} {{ vm.time }} | <a href="" class="hide">Hide</a> | <a href="http://localhost:8000/#/post?id={{vm.id}}">{{ vm.numComments }}</a> 
 </div>

@@ -17,10 +17,11 @@
   StoryCommentController.$inject = ['TopStoriesService']
   function StoryCommentController (TopStoriesService) {
     var vm = this;
-    // vm.comment;
-    // vm.commentText;
-    // vm.commentAuthor;
-    // vm.commentTime;
+    vm.comment;
+    vm.commentText;
+    vm.commentAuthor;
+    vm.commentTime;
+    vm.commentKids;
 
     TopStoriesService
       .getStory(vm.id)
@@ -28,6 +29,7 @@
         vm.commentText = res.data.text;
         vm.commentAuthor = res.data.by;
         vm.commentTime = res.data.time;
+        vm.commentKids = res.data.kids;
       });
   }
 

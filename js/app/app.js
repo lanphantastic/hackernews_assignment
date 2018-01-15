@@ -2,13 +2,18 @@
 'use strict';
 
   angular
-    .module('app', ['ui.router', 'angularUtils.directives.dirPagination']) 
+    .module('app', ['ui.router', 'angularUtils.directives.dirPagination'])
     .config(function($stateProvider, $urlRouterProvider){
       $stateProvider
         .state('top', {
           url: '/top?page',
           templateUrl: 'views/top-stories.html',
-          controller: 'TopStoriesController as vm'
+          controller: 'TopStoriesController as vm',
+          resolve: {
+            stories: function(TopStoriesService) {
+              return TopStoriesService.getStories();
+            }
+          }
         })
         .state('post', {
           url: '/post?id',

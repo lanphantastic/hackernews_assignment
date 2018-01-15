@@ -16,8 +16,8 @@
 
     function activate() {
       vm.stories = [];
-      $scope.updatePage = updatePage;
       $scope.currentPage = $stateParams.page || 1;
+      $scope.updatePage = updatePage;
       vm.start = 30 * ($scope.currentPage - 1) + 1;
 
       TopStoriesService
@@ -33,4 +33,5 @@
 
     }
   }
+
 })();
