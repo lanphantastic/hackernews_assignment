@@ -2,7 +2,7 @@
 'use strict';
 
   angular
-    .module('app', ['ui.router', 'angularUtils.directives.dirPagination'])
+    .module('app', ['ui.router', 'angularUtils.directives.dirPagination']) 
     .config(function($stateProvider, $urlRouterProvider){
       $stateProvider
         .state('top', {

@@ -8,8 +8,8 @@
   StoryController.$inject = ['TopStoriesService', '$stateParams'];
   function StoryController(TopStoriesService, $stateParams) {
     var vm = this;
-    // vm.id;
-
+    vm.id;
+    vm.story;
 
 
     activate();
