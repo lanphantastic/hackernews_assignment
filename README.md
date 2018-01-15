@@ -11,3 +11,7 @@ The objectives of this assignment are the following:
 4. Make the page mobile responsive, just like HackerNews
 5. No need to re-create search (at the bottom).
 6. Do not use a table layout - we will be judging you based on your ability to re-create a clean responsive UI. That said, feel free to use Bootstrap and/or Foundation.
+
+# RESPONSIVE
+
+https://gfycat.com/FreshSorrowfulFrillneckedlizard
