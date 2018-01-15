@@ -2,7 +2,7 @@
 'use strict';
 
   angular
-    .module('app', ['ui.router', 'angularUtils.directives.dirPagination'])
+    .module('app', ['ui.router', 'angularUtils.directives.dirPagination']) 
     .config(function($stateProvider, $urlRouterProvider){
       $stateProvider
         .state('top', {
@@ -13,7 +13,12 @@
         .state('post', {
           url: '/post?id',
           templateUrl: 'views/story-comments.html',
-          controller: 'StoryController as vm'
+          controller: 'StoryController as vm',
+          resolve: {
+            story: function(TopStoriesService, $stateParams){
+              return TopStoriesService.getStory($stateParams.id);
+            }
+          }
         })
       $urlRouterProvider.otherwise('/top');
     });
