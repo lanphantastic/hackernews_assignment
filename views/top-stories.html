@@ -1,7 +1,7 @@
-<h2>Here are the top stories</h2>
-<ol>
-  <li dir-paginate="story in vm.stories | itemsPerPage: 30">
-    <story id="story"></story>
+h2>Here are the top stories</h2>
+<ol start="{{vm.start}}">
+  <li class="" dir-paginate="story in vm.stories | itemsPerPage: 30" current-page="currentPage">
+      <story id="story"></story>
   </li>
 </ol>
-<dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="dirPagination.tpl.html"></dir-pagination-controls>
+<dir-pagination-controls on-page-change="updatePage(newPageNumber, oldPageNumber)"></dir-pagination-controls>
