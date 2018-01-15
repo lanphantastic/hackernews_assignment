@@ -14,4 +14,12 @@ The objectives of this assignment are the following:
 
 # RESPONSIVE
 
-![Alt Text](https://gfycat.com/FreshSorrowfulFrillneckedlizard)
+https://gfycat.com/FreshSorrowfulFrillneckedlizard
+
+# COMMENT PAGE AND LINK
+
+https://gfycat.com/CheapDesertedDalmatian
+
+# PAGINATE
+
+https://gfycat.com/BlushingHeartfeltFrog
