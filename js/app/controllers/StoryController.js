@@ -5,8 +5,8 @@
     .module('app')
     .controller('StoryController', StoryController);
 
-  StoryController.$inject = ['TopStoriesService'];
-  function StoryController(TopStoriesService) {
+  StoryController.$inject = ['TopStoriesService', '$stateParams'];
+  function StoryController(TopStoriesService, $stateParams) {
     var vm = this;
 
 
@@ -15,7 +15,7 @@
     ////////////////
 
     function activate() {
-
+      vm.id = $stateParams.id;
     }
   }
 })();
