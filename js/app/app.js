@@ -8,12 +8,22 @@
         .state('top', {
           url: '/top?page',
           templateUrl: 'views/top-stories.html',
-          controller: 'TopStoriesController as vm'
+          controller: 'TopStoriesController as vm',
+          resolve: {
+            stories: function(TopStoriesService) {
+              return TopStoriesService.getStories();
+            }
+          }
         })
         .state('post', {
           url: '/post?id',
           templateUrl: 'views/story-comments.html',
-          controller: 'StoryController as vm'
+          controller: 'StoryController as vm',
+          resolve: {
+            story: function(TopStoriesService, $stateParams){
+              return TopStoriesService.getStory($stateParams.id);
+            }
+          }
         })
       $urlRouterProvider.otherwise('/top');
     });
