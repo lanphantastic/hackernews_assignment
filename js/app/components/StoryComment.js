@@ -17,10 +17,10 @@
   StoryCommentController.$inject = ['TopStoriesService']
   function StoryCommentController (TopStoriesService) {
     var vm = this;
-    vm.comment;
-    vm.commentText;
-    vm.commentAuthor;
-    vm.commentTime;
+    // vm.comment;
+    // vm.commentText;
+    // vm.commentAuthor;
+    // vm.commentTime;
 
     TopStoriesService
       .getStory(vm.id)
