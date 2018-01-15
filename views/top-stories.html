@@ -1,6 +1,6 @@
 <h2>Here are the top stories</h2>
 <ol start="{{ vm.start }}">
-  <li dir-paginate="story in vm.stories | itemsPerPage: 30">
+  <li dir-paginate="story in vm.stories | itemsPerPage: 30" current-page="currentPage">
     <story id="story"></story>
   </li>
 </ol>
