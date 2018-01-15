@@ -7,7 +7,6 @@
 
   TopStoriesController.$inject = ['TopStoriesService', '$scope', '$stateParams', '$location'];
   function TopStoriesController(TopStoriesService, $scope, $stateParams, $location) {
-
     var vm = this;
 
 
@@ -17,8 +16,8 @@
 
     function activate() {
       vm.stories = [];
-      $scope.currentPage = $stateParams.page || 1;
       $scope.updatePage = updatePage;
+      $scope.currentPage = $stateParams.page || 1;
       vm.start = 30 * ($scope.currentPage - 1) + 1;
 
       TopStoriesService
@@ -28,11 +27,10 @@
         });
 
       function updatePage(newPageNumber, oldPageNumber) {
-        $location.path(newPageNumber);
+        $location.url('top?page=' + newPageNumber);
         vm.start = 30 * (newPageNumber - 1) + 1;
       }
 
     }
   }
-
 })();
