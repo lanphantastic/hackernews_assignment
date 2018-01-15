@@ -25,6 +25,15 @@
     return directive;
 
     function link(scope, element, attrs) {
+      var hideLink = element[0].querySelector('.hide');
+
+      hideLink.addEventListener('click', function(event){
+        element.parent().remove();
+      });
+
+      scope.$on('$destroy', function(){
+        element.off();
+      });
     }
   }
   /* @ngInject */
