@@ -15,11 +15,10 @@
     ////////////////
 
     function activate() {
-
       vm.stories = [];
-      $scope.currentPage = $stateParams.page || 1;
       $scope.updatePage = updatePage;
-      vm.start = ($scope.currentPage - 1) * 30 + 1;
+      $scope.currentPage = $stateParams.page || 1;
+      vm.start = 30 * ($scope.currentPage - 1) + 1;
 
       TopStoriesService
         .getStories()
@@ -28,8 +27,8 @@
         });
 
       function updatePage(newPageNumber, oldPageNumber) {
-        $location.path(newPageNumber);
-        vm.start = (newPageNumber - 1) * 30 + 1;
+        $location.url('top?page=' + newPageNumber);
+        vm.start = 30 * (newPageNumber - 1) + 1;
       }
 
     }
