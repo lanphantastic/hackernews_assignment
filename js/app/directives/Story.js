@@ -61,6 +61,16 @@
       }
     }
 
+    function getNumComments(comments) {
+      if ( !comments || comments.length === 0 ) {
+        return 'discuss';
+      } else if (comments.length === 1) {
+        return '1 comment';
+      } else {
+        return comments.length + ' comments';
+      }
+    }
+
     TopStoriesService
       .getStory(vm.id)
       .then(function(res){
@@ -74,6 +84,7 @@
         vm.score = vm.story.score;
         vm.author = vm.story.by;
         vm.time = getHoursAgo(vm.story.time);
+        vm.numComments = getNumComments(vm.story.kids);
       })
   }
 })();
