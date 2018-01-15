@@ -5,8 +5,8 @@
     .module('app')
     .controller('TopStoriesController', TopStoriesController);
 
-  TopStoriesController.$inject = ['TopStoriesService', '$scope', '$stateParams'];
-  function TopStoriesController(TopStoriesService, $scope, $stateParams) {
+  TopStoriesController.$inject = ['TopStoriesService', '$scope', '$stateParams', '$location'];
+  function TopStoriesController(TopStoriesService, $scope, $stateParams, $location) {
 
     var vm = this;
 
@@ -28,6 +28,7 @@
         });
 
       function updatePage(newPageNumber, oldPageNumber) {
+        $location.path(newPageNumber);
         vm.start = 30 * (newPageNumber - 1) + 1;
       }
 
